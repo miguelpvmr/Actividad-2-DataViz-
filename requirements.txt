@@ -1,0 +1,12 @@
+dash
+plotly
+pandas
+geopandas
+numpy
+mapclassify
+unidecode
+openpyxl
+pyjanitor
+shapely
+pathlib
+gunicorn
