@@ -11,10 +11,11 @@ from mapclassify import Quantiles, NaturalBreaks
 warnings.filterwarnings("ignore")
 
 # === RUTAS ===
-base = Path.home() / "Desktop" / "Actividad#2_DataViz_Miguel_Pérez"
+base = Path(__file__).parent
 path_mm = base / "Datos_2023_550.xlsx"
 path_nv = base / "Nacimientos_2023.xlsx"
 path_shp = base / "MGN_DPTO_POLITICO.shp"
+
 
 # === CARGA DE DATOS ===
 mm = pd.read_excel(path_mm, engine="openpyxl")
