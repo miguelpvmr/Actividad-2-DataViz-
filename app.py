@@ -100,7 +100,6 @@ datos["NV_TOTAL"] = datos["NV_TOTAL"].fillna(0).astype(int)
 datos["RMM_100k"] = np.where(datos["NV_TOTAL"] > 0,
                              datos["MM_MUERTES"] / datos["NV_TOTAL"] * 100000, np.nan)
 
-# === Crear GeoJSON liviano para Plotly ===
 geojson_light = {
     "type": "FeatureCollection",
     "features": [
@@ -167,7 +166,6 @@ def actualizar_mapas(clasif):
         if method == "Quantiles":
             return Quantiles(values, k=5).bins
         elif method == "NaturalBreaks":
-            # NaturalBreaks es pesado, limitamos iteraciones
             return NaturalBreaks(values, k=5, initial=100).bins
         elif method == "BoxPlot":
             q1, q3 = np.percentile(values, [25, 75])
